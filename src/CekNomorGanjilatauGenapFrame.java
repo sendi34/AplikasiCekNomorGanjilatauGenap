@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import java.awt.event.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author sendi
@@ -14,6 +16,8 @@ public class CekNomorGanjilatauGenapFrame extends javax.swing.JFrame {
      */
     public CekNomorGanjilatauGenapFrame() {
         initComponents();
+      
+        
     }
 
     /**
@@ -27,18 +31,35 @@ public class CekNomorGanjilatauGenapFrame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnCheck = new javax.swing.JButton();
+        textField1 = new java.awt.TextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridLayout());
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 255));
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Masukan Nomor");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jButton1.setText("CEK");
+        btnCheck.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btnCheck.setText("CEK");
+        btnCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCheckActionPerformed(evt);
+            }
+        });
+
+        textField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textField1FocusGained(evt);
+            }
+        });
+        textField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textField1KeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -47,25 +68,25 @@ public class CekNomorGanjilatauGenapFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addGap(19, 19, 19)
                         .addComponent(jLabel1)
-                        .addGap(51, 51, 51)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(57, 57, 57)
+                        .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(jButton1)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                        .addGap(100, 100, 100)
+                        .addComponent(btnCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(32, 32, 32)
-                .addComponent(jButton1)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addGap(58, 58, 58)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(btnCheck)
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
@@ -73,6 +94,60 @@ public class CekNomorGanjilatauGenapFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Event handler untuk tombol "CEK" ketika ditekan
+    private void btnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckActionPerformed
+        String input = textField1.getText();
+        // Mengecek apakah input kosong
+        if (input.isEmpty()){
+            JOptionPane.showMessageDialog(this, "inputan tidak boleh kosong!", "error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Mengonversi input dari String menjadi integer
+        int nilai = Integer.parseInt(input); 
+        
+        // Membuat pesan hasil untuk menentukan ganjil/genap dan prima
+        StringBuilder SB = new StringBuilder();
+        SB.append(nilai).append(" adalah bilangan ");
+        if (nilai % 2 == 0) {
+            SB.append("genap");
+        } else {
+            SB.append("ganjil");
+            if (isPrime(nilai)) {
+                SB.append(" dan prima");
+            }
+        }
+       
+        // Menampilkan hasil dengan JOptionPane
+        JOptionPane.showMessageDialog(this, SB.toString(), "Hasil", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnCheckActionPerformed
+
+    // Event handler untuk mencegah input selain angka pada textField
+    private void textField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textField1KeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+            JOptionPane.showMessageDialog(this, "hanya boleh diisi angka", "error", JOptionPane.ERROR_MESSAGE);
+            evt.consume();
+        }
+    }//GEN-LAST:event_textField1KeyTyped
+
+    // Event handler untuk membersihkan textField saat fokus didapatkan
+    private void textField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textField1FocusGained
+        textField1.setText("");
+    }//GEN-LAST:event_textField1FocusGained
+
+    // Fungsi untuk mengecek apakah suatu bilangan adalah bilangan prima
+    private boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }   
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }       
+        return true;
+    }
     /**
      * @param args the command line arguments
      */
@@ -109,9 +184,10 @@ public class CekNomorGanjilatauGenapFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnCheck;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private java.awt.TextField textField1;
     // End of variables declaration//GEN-END:variables
 }
+
