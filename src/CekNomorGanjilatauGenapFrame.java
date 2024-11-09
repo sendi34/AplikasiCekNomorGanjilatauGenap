@@ -97,6 +97,7 @@ public class CekNomorGanjilatauGenapFrame extends javax.swing.JFrame {
     // Event handler untuk tombol "CEK" ketika ditekan
     private void btnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckActionPerformed
         String input = textField1.getText();
+       
         // Mengecek apakah input kosong
         if (input.isEmpty()){
             JOptionPane.showMessageDialog(this, "inputan tidak boleh kosong!", "error", JOptionPane.ERROR_MESSAGE);
