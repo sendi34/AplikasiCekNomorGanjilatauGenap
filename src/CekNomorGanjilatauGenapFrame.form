@@ -31,6 +31,13 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="66" red="66" type="rgb"/>
         </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="APLIKASI CEK NOMOR GANJIL GENAP">
+              <Font PropertyName="font" name="Segoe UI" size="14" style="0"/>
+            </TitledBorder>
+          </Border>
+        </Property>
       </Properties>
 
       <Layout>
@@ -49,7 +56,7 @@
                           <Component id="btnCheck" min="-2" pref="93" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <EmptySpace pref="14" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -63,7 +70,7 @@
                   </Group>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="btnCheck" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="92" max="32767" attributes="0"/>
+                  <EmptySpace pref="65" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

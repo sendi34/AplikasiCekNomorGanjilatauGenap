@@ -38,6 +38,7 @@ public class CekNomorGanjilatauGenapFrame extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "APLIKASI CEK NOMOR GANJIL GENAP", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Masukan Nomor");
@@ -75,7 +76,7 @@ public class CekNomorGanjilatauGenapFrame extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(100, 100, 100)
                         .addComponent(btnCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,7 +87,7 @@ public class CekNomorGanjilatauGenapFrame extends javax.swing.JFrame {
                     .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(btnCheck)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
