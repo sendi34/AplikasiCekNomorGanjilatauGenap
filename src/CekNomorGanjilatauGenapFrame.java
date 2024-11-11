@@ -38,7 +38,7 @@ public class CekNomorGanjilatauGenapFrame extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "APLIKASI CEK NOMOR GANJIL GENAP", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "APLIKASI CEK NOMOR GANJIL GENAP", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Masukan Nomor");
