@@ -11,4 +11,4 @@ Kelas     : 5B Reguler Banjarbaru<br>
 ![2](https://github.com/user-attachments/assets/51006929-774d-4938-a691-45ae8fc118fe)
 
 # KEUNGGULAN PROJECT
-Keunggulan aplikasi ini tidak hanya dapat melihat umur sekarang, tetapi dapat menampilkan peristiwa penting yang ada di dunia sesuai tanggal lahir yang dipilih.
+Aplikasi cek nomor ganjil-genap ini memiliki berbagai keunggulan yang mempermudah pengguna dalam mengidentifikasi jenis bilangan dengan lebih interaktif. Salah satu fitur utamanya adalah pembatasan input hanya untuk angka pada JTextField, yang menjamin validitas data sejak awal. Aplikasi ini juga dilengkapi variasi tambahan yang memperkaya fungsi utamanya, seperti fitur untuk memeriksa apakah angka yang dimasukkan adalah bilangan prima. Selain itu, aplikasi menggunakan JOptionPane untuk menampilkan pesan hasil perhitungan maupun pesan kesalahan input, memberikan umpan balik langsung kepada pengguna. Agar lebih user-friendly, aplikasi ini juga mengimplementasikan FocusListener pada JTextField sehingga kolom input akan secara otomatis kosong saat pengguna fokus kembali ke kolom tersebut, membuat pengalaman penggunaan menjadi lebih intuitif dan efisien.
